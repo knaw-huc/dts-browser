@@ -23,15 +23,9 @@ export default function ResourceView(props: Props) {
 		<Li 
 			onClick={async (ev) => {
 				ev.stopPropagation()
-				// if (this.state.active) {
-				// 	this.setState({ active: false })
-				// 	return
-				// }
-
-				const urlPath = `${props.dtsConfig.documents}?id=${props.resource['@id']}`
-				const resource = await props.fetch(urlPath, DTSResponseType.Xml)
-				console.log(resource)
-				// this.setState({ active: true, members: resource.member })
+				const urlPath = `${props.dtsConfig.navigation}?id=${props.resource['@id']}`
+				// await props.fetch(urlPath, DTSResponseType.Xml)
+				await props.fetch(urlPath, DTSResponseType.Json)
 			}}
 		>
 			<ListItem
