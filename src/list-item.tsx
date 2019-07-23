@@ -4,7 +4,7 @@ import styled from '@emotion/styled';
 
 const Wrapper = styled.div`
 	display: grid;
-	grid-template-columns: 32px auto;
+	grid-template-columns: 32px auto 32px;
 	width: 100%;
 `
 
@@ -52,6 +52,20 @@ export default function ListItem(props: Props) {
 					<Small>({props.item.totalItems})</Small>
 				}
 			</div>
+			{
+				props.item['@type'] === CollectionType.Resource &&
+				<a
+					href={`${props.dtsConfig.documents}?id=${props.item['@id']}`}
+					target="_blank"
+				>
+					<img
+						alt="Open TEI in new tab"
+						src={'/static/download.png'}
+						title="Open TEI in new tab"
+						width="20px"
+					/>
+				</a>
+			}
 		</Wrapper>
 	)
 }
