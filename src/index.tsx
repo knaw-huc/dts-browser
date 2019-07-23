@@ -18,7 +18,10 @@ const Main = styled('div')`
 	width: 100%;
 
 	& > h1 {
+		color: brown;
+		font-size: 2rem;
 		grid-column: 1 / span 2;
+		text-transform: uppercase;
 	}
 `
 
